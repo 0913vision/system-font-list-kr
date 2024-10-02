@@ -36,15 +36,13 @@ module.exports = () => new Promise((resolve, reject) => {
       $name = $family.FamilyNames[[Windows.Markup.XmlLanguage]::GetLanguage('en-us')]
     }
     $weights = @()
-    $styles = @()
     foreach ($typeface in $family.FamilyTypefaces) {
-      $weights += $typeface.Weight.ToString()
-      $styles += if ($typeface.Style -eq [Windows.FontStyle]::Italic) { 'Italic' } else { 'Normal' }
+      $weightValue = $typeface.Weight.ToOpenTypeWeight()
+      $weights += $weightValue
     }
     $fontInfo = @{
-      name = $name
+      family = $name
       weights = $weights
-      styles = $styles
     }
     $results += $fontInfo
   }
@@ -57,6 +55,7 @@ module.exports = () => new Promise((resolve, reject) => {
   const cmd = `chcp 65001 | powershell -NoProfile -ExecutionPolicy Bypass -File "${tempScriptPath}"`;
 
   exec(cmd, { maxBuffer: 1024 * 1024 * 10 }, (err, stdout, stderr) => {
+    fs.unlinkSync(tempScriptPath);
     if (err) {
       reject(err)
       return

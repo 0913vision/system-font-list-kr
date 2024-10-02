@@ -29,7 +29,7 @@ exports.getFonts = async (options) => {
 
   // 폰트 이름을 기준으로 정렬 (name 필드 사용)
   fonts.sort((a, b) => {
-    return a.name.replace(/^['"]+/, '').toLocaleLowerCase() < b.name.replace(/^['"]+/, '').toLocaleLowerCase() ? -1 : 1
+    return a.family.replace(/^['"]+/, '').toLocaleLowerCase() < b.family.replace(/^['"]+/, '').toLocaleLowerCase() ? -1 : 1
   })
 
   return fonts
