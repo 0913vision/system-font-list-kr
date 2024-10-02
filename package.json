@@ -1,0 +1,23 @@
+{
+  "name": "system-font-list-kr",
+  "version": "0.1.0",
+  "description": "A library for fetching Korean and English fonts for the system. This only supports Windows 10 or later.",
+  "main": "index.js",
+  "scripts": {
+    "demo": "node demo.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "p": "npm publish --access public"
+  },
+  "keywords": [
+    "font"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0913vision/system-font-list-kr"
+  },
+  
+  "author": "Mideum_",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
