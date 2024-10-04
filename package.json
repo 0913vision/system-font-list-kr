@@ -1,6 +1,6 @@
 {
   "name": "system-font-list-kr",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A library for fetching Korean and English fonts for the system. This only supports Windows 10 or later.",
   "main": "index.js",
   "scripts": {

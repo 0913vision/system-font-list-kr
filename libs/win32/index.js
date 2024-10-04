@@ -16,7 +16,6 @@ module.exports = async () => {
 
   try {
     fonts = await getByPowerShell()
-    console.log(Array.isArray(fonts), fonts.length)
     // console.log(fonts)
     if (fonts.length > 0) {
       return fonts
